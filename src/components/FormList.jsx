@@ -18,13 +18,26 @@ function FormList() {
     setProductName("");
   };
 
+  const emptyList = () => {
+    setShoppingList([]);
+  };
+
+  const handleDelete = (productToDelete) => {
+    setShoppingList((currentState) =>
+      currentState.filter((product) => product !== productToDelete)
+    );
+  };
+
   return (
     <div>
       <ul>
         {shoppingList.map((product, index) => (
-          <li key={index}>{product}</li>
+          <li key={index}>
+            {product} <button onClick={() => handleDelete(product)}>🗑️</button>
+          </li>
         ))}
       </ul>
+      <button onClick={emptyList}>Cancella lista</button>
       <hr />
       <h3>Aggiungi Prodotto</h3>
       <form onSubmit={handleSubmit}>
