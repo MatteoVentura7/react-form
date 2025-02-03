@@ -39,7 +39,7 @@ function FormList() {
       </ul>
       <button onClick={emptyList}>Cancella lista</button>
       <hr />
-      <h3>Aggiungi Prodotto</h3>
+      <h3>Aggiungi Articolo</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -48,7 +48,9 @@ function FormList() {
             setProductName(e.target.value);
           }}
         />
-        <button type="submit">Invia</button>
+        <div>
+          <button type="submit">Invia</button>
+        </div>
       </form>
     </div>
   );
